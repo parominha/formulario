@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Input from "./Components/Input";
+import Steps from "./Components/Steps";
+import Box from "./Components/Box";
+import Button from "./Components/Button";
+
+const steps = [
+  { title: 'Contato', ordem: 1 },
+  { title: 'Empresa', ordem: 2 },
+  { title: 'Projeto', ordem: 3 }
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{
+      fontFamily: 'Nunito',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+    }}>
+      <Box>
+
+        <div style={{
+          padding: '20px',
+          borderBottom: '1px solid #ccc',
+          display: 'flex',
+          justifyContent: 'center'
+        }}>
+          <Steps steps={steps} />
+        </div>
+
+        <div style={{
+          padding: '20px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+        }}>
+          <Input label="Nome" placeholder="Digite seu nome" required={true}/>
+          <Input label="Telefone" placeholder="(xx) xxxxx-xxxx" />
+          <Input label="E-mail" placeholder="exemplo@email.com" required={true} type="email"/>
+        </div>
+
+        <div style={{
+          paddingRight: '40px',
+          display: 'flex',
+          justifyContent: 'flex-end',
+        }}>
+          <Button texto="Continuar" />
+        </div>
+
+      </Box>
+    </div>
+  );
 }
 
-export default App
+export default App;
