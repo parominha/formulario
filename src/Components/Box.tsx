@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Box.module.css';
 
 type Props = {
   children: React.ReactNode;
@@ -6,16 +7,7 @@ type Props = {
 
 const Box = ({ children }: Props) => {
   return (
-    <div
-      style={{
-        border: '1px solid #ddd',
-        width: '550px',
-        height: '520px',
-        margin: 'auto',
-        backgroundColor: '#fff',
-        fontFamily: 'Nunito',
-      }}
-    >
+    <div className={styles.box}>
       {children}
     </div>
   );

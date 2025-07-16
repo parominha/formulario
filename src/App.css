@@ -1,0 +1,27 @@
+.container {
+    font-family: 'Nunito';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fefefe;
+}
+
+.container .steps {
+    padding: 0px 20px 10px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+}
+
+.container .input {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.container .button {
+    padding: 0px 40px 25px 40px;
+    display: flex;
+}

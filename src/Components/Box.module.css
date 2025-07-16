@@ -1,0 +1,10 @@
+.box {
+    width: 550px;
+    min-height: 400px;
+    margin: auto;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+    border-radius: 10px;
+}

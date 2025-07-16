@@ -2,29 +2,28 @@ type Props = {
     label: string;
     placeholder: string;
     value: string;
-    type?: string;
     required?: boolean;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const Input = (props: Props) => {
+const TextArea = (props: Props) => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', margin: '0px 20px 15px 20px' }}>
             <label style={{ fontWeight: 700 }}>
                 {props.label}
-                {props.required && <span style={{ color: '#383A68' }}> *</span>}
+                {props.required && <span style={{ color: '#262668' }}> *</span>}
             </label>
-            <input
-                style={{ padding: 15 }}
+            <textarea
+                style={{ padding: 15, resize: 'none'}}
                 placeholder={props.placeholder}
                 required={props.required}
-                type={props.type}
                 value={props.value}
                 onChange={props.onChange}
-                autoComplete="off"
-            />
+                rows={6}
+            >
+            </textarea>
         </div>
     )
 }
 
-export default Input;
+export default TextArea;
