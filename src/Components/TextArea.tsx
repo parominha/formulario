@@ -9,12 +9,12 @@ type Props = {
 const TextArea = (props: Props) => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', margin: '0px 20px 15px 20px' }}>
-            <label style={{ fontWeight: 700 }}>
+            <label style={{ fontWeight: 700, color: '#222222' }}>
                 {props.label}
                 {props.required && <span style={{ color: '#262668' }}> *</span>}
             </label>
             <textarea
-                style={{ padding: 15, resize: 'none'}}
+                style={{ padding: 15, resize: 'none', fontFamily: 'Nunito'}}
                 placeholder={props.placeholder}
                 required={props.required}
                 value={props.value}

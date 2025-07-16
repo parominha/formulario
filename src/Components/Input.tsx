@@ -10,7 +10,7 @@ type Props = {
 const Input = (props: Props) => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', margin: '0px 20px 15px 20px' }}>
-            <label style={{ fontWeight: 700 }}>
+            <label style={{ fontWeight: 700, color: '#222222' }}>
                 {props.label}
                 {props.required && <span style={{ color: '#383A68' }}> *</span>}
             </label>

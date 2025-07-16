@@ -13,7 +13,7 @@ const steps = [
 ];
 
 function App() {
-  
+
   // Estado de step
   const [stepAtual, setStepAtual] = useState(1);
 
@@ -35,7 +35,7 @@ function App() {
 
         {stepAtual === 1 && (
           <div className='input'>
-            <Input label="Nome" placeholder="Digite seu nome" value={nome} onChange={(e) => setNome(e.target.value)} required={true} />
+            <Input label="Nome" placeholder="Como prefere ser chamado" value={nome} onChange={(e) => setNome(e.target.value)} required={true} />
             <Input label="Telefone" placeholder="(xx) xxxxx-xxxx" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
             <Input label="E-mail" placeholder="exemplo@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required={true} type="email" />
           </div>
