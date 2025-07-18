@@ -4,7 +4,7 @@ import Box from "./Components/Box";
 import Button from "./Components/Button";
 import './App.css'
 import { useState } from "react";
-import TextArea from "./Components/Textarea";
+import TextArea from "./Components/TextArea";
 
 const steps = [
   { title: 'Contato', ordem: 1 },
@@ -24,6 +24,7 @@ function App() {
   const [nomeEmpresa, setNomeEmpresa] = useState('');
   const [numeroFuncionarios, setNumeroFuncionarios] = useState('');
   const [sobre, setSobre] = useState('');
+  const [objetivo, setObjetivo] = useState('');
 
   return (
     <div className="container">
@@ -49,9 +50,7 @@ function App() {
         )}
         {stepAtual === 3 && (
           <div className='input'>
-            <Input label="Nome" placeholder="Digite seu nome" value={nome} required={true} />
-            <Input label="Telefone" placeholder="(xx) xxxxx-xxxx" value={telefone} />
-            <Input label="E-mail" placeholder="exemplo@email.com" value={email} required={true} type="email" />
+            <TextArea label="Objetivo do projeto" placeholder="Descreva quais os objetivos do projeto" value={objetivo} onChange={(e) => setObjetivo(e.target.value)}/>
           </div>
         )}
 
@@ -59,7 +58,7 @@ function App() {
           {stepAtual > 1 && (
             <Button texto="Voltar" bgColor={false} onClick={() => setStepAtual(prev => Math.max(prev - 1, 1))} />
           )}
-          <Button texto="Continuar" bgColor={true} onClick={() => setStepAtual(prev => Math.min(prev + 1, steps.length))} />
+          <Button texto={stepAtual === 3 ? "Enviar" : "Continuar"} bgColor={true} onClick={() => setStepAtual(prev => Math.min(prev + 1, steps.length))} />
         </div>
 
       </Box>
